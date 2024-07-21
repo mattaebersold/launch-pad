@@ -16,7 +16,7 @@ const Sidebar = () => {
 					</li>
 				</ul>
 
-				<Badge className="p-3" color="orange">Component</Badge>
+				<Badge color="orange">Component</Badge>
 				<ul className="my-3 mb-12">
 					<li className="ml-0">
 						<LaunchPadNavLink to="/components/button-list" label="Button List" />

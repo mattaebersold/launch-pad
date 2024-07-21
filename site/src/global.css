@@ -63,3 +63,10 @@ a.active {
   text-decoration: underline;
   font-weight: bold;
 }
+
+.rt-Badge {
+  font-size: 14px !important;
+  font-weight: bold !important;
+  padding: 3px 7px !important;
+  border-radius: 5px  !important;
+}
