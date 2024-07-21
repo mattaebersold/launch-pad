@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import GoodnessImage from "../../assets/images/logo.png"
+import LaunchPadNavLink from "./LaunchPadNavLink"
 import { FaGithub } from "react-icons/fa";
 
 const Header = () => {
@@ -10,16 +11,14 @@ const Header = () => {
 
         <Link to="/" className="flex items-center font-bold">
           <img className="block mr-4 h-[50px] w-auto" src={GoodnessImage} alt="goodness" />
-          <span>Launch Pad</span>
+          <span>Launch Pad Component Library (Internal)</span>
         </Link>
 
         <ul className="flex items-center">
           <li className="mx-3">
-            <Link to="/demos">
-              <span>Demos</span>
-            </Link>
+            <LaunchPadNavLink to="/demos" label="Demos" />
           </li>
-          <li className="mx-3">
+          <li className="mx-3 text-3xl">
             <Link to="https://github.com/mattaebersold/launch-pad">
               <FaGithub />
             </Link>
