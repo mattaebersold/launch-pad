@@ -7,7 +7,7 @@ import { FaGithub } from "react-icons/fa";
 const Header = () => {
   return (
     <header className="mb-5">
-      <div className="flex items-center justify-between py-6 w-11/12 mx-auto">
+      <div className="flex items-center justify-between py-6 w-11/12 max-w-[1400px] mx-auto">
 
         <Link to="/" className="flex items-center font-bold">
           <img className="block mr-4 h-[50px] w-auto" src={GoodnessImage} alt="goodness" />
