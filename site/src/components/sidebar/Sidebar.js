@@ -5,7 +5,7 @@ import { Badge } from '@radix-ui/themes';
 const Sidebar = () => {
   return (
 		<>
-			<div className="w-[250px] p-6 mr-12 border-2 border-red rounded-[10px]">
+			<div className="w-[200px] p-6 mr-12 border-2 border-red rounded-[10px]">
 				<Badge color="blue">Primitive</Badge>
 				<ul className="mt-3 mb-12">
 					<li className="ml-0">

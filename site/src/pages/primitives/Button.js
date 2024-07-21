@@ -1,8 +1,24 @@
 import React from "react";
 import Sidebar from "../../components/sidebar/Sidebar"
 import { Badge } from '@radix-ui/themes';
+import { CopyBlock, dracula } from 'react-code-blocks';
 
 const Button = () => {
+
+	const code = `
+import React from "react";
+
+const Button = () => {
+	return (
+		<>
+			<p>Test</p>
+		</>
+	);
+};
+
+export default Button;
+	`
+
   return (
     <div className="flex items-start w-11/12 mx-auto py-12">
       <Sidebar />
@@ -14,10 +30,21 @@ const Button = () => {
 					<h2 className="mb-3">Example</h2>
 					<p>Example Here</p>
 				</div>
+
+				<div className="my-12">
+					<h2 className="mb-3">Variants</h2>
+					<p>Variant examples</p>
+				</div>
 				
 				<div className="my-12">
 					<h2 className="mb-3">Source</h2>
-					<p>Code to copy here</p>
+					<CopyBlock
+						text={code}
+						language="react"
+						theme={dracula}
+						showLineNumbers
+						wrapLines
+					/>
 				</div>
 
       </div>
