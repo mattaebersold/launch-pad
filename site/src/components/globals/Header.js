@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import GoodnessImage from "../../assets/images/logo.png"
 import LaunchPadNavLink from "./LaunchPadNavLink"
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaRocket } from "react-icons/fa";
 
 const Header = () => {
   return (
@@ -10,8 +9,8 @@ const Header = () => {
       <div className="flex items-center justify-between py-6 w-11/12 max-w-[1400px] mx-auto">
 
         <Link to="/" className="flex items-center font-bold">
-          <img className="block mr-4 h-[50px] w-auto" src={GoodnessImage} alt="goodness" />
-          <span>Launch Pad Component Library (Internal)</span>
+          <FaRocket className="text-2xl mr-3" />
+          <span>Launch Pad Component Library</span>
         </Link>
 
         <ul className="flex items-center">

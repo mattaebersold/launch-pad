@@ -13,10 +13,11 @@ import Demos from "./pages/Demos";
 import Header from "./components/globals/Header";
 
 // pages
-import ButtonPage from "./pages/primitives/Button";
-import InputPage from "./pages/primitives/Input";
-import ButtonListPage from "./pages/components/ButtonList";
-import HalfBlockPage from "./pages/blocks/HalfBlock";
+import ButtonPage from "./pages/atoms/Button";
+import InputPage from "./pages/atoms/Input";
+import StateSelect from "./pages/molecules/StateSelect";
+import ButtonListPage from "./pages/molecules/ButtonList";
+import HalfBlockPage from "./pages/organisms/HalfBlock";
 
 function App() {
   return (
@@ -28,12 +29,13 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/demos" element={<Demos />} />
 
-            <Route path="/primitives/button" element={<ButtonPage />} />
-            <Route path="/primitives/input" element={<InputPage />} />
+            <Route path="/atoms/button" element={<ButtonPage />} />
+            <Route path="/atoms/input" element={<InputPage />} />
+            <Route path="/molecules/state-select" element={<StateSelect />} />
 
-            <Route path="/components/button-list" element={<ButtonListPage />} />
+            <Route path="/molecules/button-list" element={<ButtonListPage />} />
 
-            <Route path="/blocks/half-block" element={<HalfBlockPage />} />
+            <Route path="/organisms/half-block" element={<HalfBlockPage />} />
           </Routes>
         </div>
       </BrowserRouter>

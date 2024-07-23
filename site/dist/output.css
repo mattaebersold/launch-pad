@@ -597,15 +597,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
-:root {
-  --primaryColor: magenta;
-  --secondaryColor: cyan;
-  --tertiaryColor: gold;
-  --successColor: green;
-  --errorColor: red;
-}
-
-h1 {
-  color: var(--primaryColor);
-}

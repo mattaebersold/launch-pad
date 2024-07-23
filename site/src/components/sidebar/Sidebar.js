@@ -5,30 +5,34 @@ import { Badge } from '@radix-ui/themes';
 const Sidebar = () => {
   return (
 		<>
-			<div className="w-[200px] p-6 mr-12 border-2 border-red rounded-[10px]">
-				<Badge color="blue">Primitive</Badge>
+			<div className="w-[200px] p-6 mr-12 bg-black/50 rounded-[10px] shrink-0">
+				<Badge color="cyan">Atoms</Badge>
 				<ul className="mt-3 mb-12">
-					<li className="ml-0">
-						<LaunchPadNavLink to="/primitives/button" label="Button" />
+					{/* <li className="ml-0">
+						<LaunchPadNavLink to="/atoms/button" label="Button" />
 					</li>
 					<li className="ml-0">	
-						<LaunchPadNavLink to="/primitives/input" label="Input" />					
-					</li>
+						<LaunchPadNavLink to="/atoms/input" label="Input" />					
+					</li> */}
+					
 				</ul>
 
-				<Badge color="orange">Component</Badge>
+				<Badge color="orange">Molecules</Badge>
 				<ul className="my-3 mb-12">
-					<li className="ml-0">
-						<LaunchPadNavLink to="/components/button-list" label="Button List" />
+					{/* <li className="ml-0">
+						<LaunchPadNavLink to="/molecules/button-list" label="Button List" />
+					</li> */}
+					<li className="ml-0">	
+						<LaunchPadNavLink to="/molecules/state-select" label="State Select" />					
 					</li>
 				</ul>
 
 
-				<Badge color="green">Block</Badge>
+				<Badge color="green">Organisms</Badge>
 				<ul className="mt-3 mb-6">
-					<li className="ml-0">
-						<LaunchPadNavLink to="/blocks/half-block" label="Half Block" />
-					</li>
+					{/* <li className="ml-0">
+						<LaunchPadNavLink to="/organisms/half-block" label="Half Block" />
+					</li> */}
 				</ul>
 			</div>
 		</>
