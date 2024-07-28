@@ -16,9 +16,13 @@ import Header from "./components/globals/Header";
 import ButtonPage from "./pages/atoms/Button";
 import InputPage from "./pages/atoms/Input";
 import SelectPage from "./pages/atoms/Select";
+
 import StateSelect from "./pages/molecules/StateSelect";
 import ButtonListPage from "./pages/molecules/ButtonList";
+import MenuPage from "./pages/molecules/Menu";
+
 import HalfBlockPage from "./pages/organisms/HalfBlock";
+import DropdownMenuPage from "./pages/organisms/DropdownMenu"
 
 function App() {
   return (
@@ -33,10 +37,12 @@ function App() {
             <Route path="/atoms/button" element={<ButtonPage />} />
             <Route path="/atoms/input" element={<InputPage />} />
             <Route path="/atoms/select" element={<SelectPage />} />
+
             <Route path="/molecules/state-select" element={<StateSelect />} />
-
             <Route path="/molecules/button-list" element={<ButtonListPage />} />
+            <Route path="/molecules/menu" element={<MenuPage />} />
 
+            <Route path="/organisms/dropdown-menu" element={<DropdownMenuPage />} />
             <Route path="/organisms/half-block" element={<HalfBlockPage />} />
           </Routes>
         </div>

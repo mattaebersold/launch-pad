@@ -88,7 +88,7 @@ export default StateSelect;
     <div className="flex items-start w-11/12 max-w-[1400px] mx-auto py-12">
       <Sidebar />
       <div className="grow relative">
-				<Badge color="orange">Molecules</Badge>
+				<Badge color="orange">Molecule</Badge>
         <h1 className="text-3xl font-bold mb-6">State Select Dropdown</h1>
 
 				<div className="my-12">

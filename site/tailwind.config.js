@@ -35,7 +35,13 @@ module.exports = {
         DEFAULT: "#2F3A4C",
       },
       primary: {
-        DEFAULT: "#FFF6E0"
+        DEFAULT: "#FFF6E0",
+      },
+      popover: {
+        DEFAULT: "#000000",
+      },
+      popoverInverse: {
+        DEFAULT: "#eeeeee",
       }
     },
   },

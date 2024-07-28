@@ -13,9 +13,10 @@ const Sidebar = () => {
 						<LaunchPadNavLink to="/atoms/select" label="Select" />
 					</li>
 	
-					{/* <li className="ml-0">
+					<li className="ml-0">
 						<LaunchPadNavLink to="/atoms/button" label="Button" />
-					</li> */}
+					</li>
+					
 					<li className="ml-0">	
 						<LaunchPadNavLink to="/atoms/input" label="Input" />					
 					</li>
@@ -30,11 +31,19 @@ const Sidebar = () => {
 					<li className="ml-0">	
 						<LaunchPadNavLink to="/molecules/state-select" label="State Select" />					
 					</li>
+
+					<li className="ml-0">
+						<LaunchPadNavLink to="/molecules/menu" label="Menu" />
+					</li>
+
 				</ul>
 
 
 				<Badge color="green">Organisms</Badge>
 				<ul className="mt-3 mb-6">
+					<li className="ml-0">
+						<LaunchPadNavLink to="/organisms/dropdown-menu" label="Dropdown Menu" />
+					</li>
 					{/* <li className="ml-0">
 						<LaunchPadNavLink to="/organisms/half-block" label="Half Block" />
 					</li> */}

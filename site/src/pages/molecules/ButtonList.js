@@ -24,7 +24,7 @@ const ButtonList = () => {
     <div className="flex items-start w-11/12 max-w-[1400px] mx-auto py-12">
       <Sidebar />
       <div className="grow relative">
-				<Badge color="orange">Component</Badge>
+				<Badge color="orange">Molecule</Badge>
         <h1 className="text-3xl font-bold mb-6">Button List</h1>
 
 				<div className="my-12">
