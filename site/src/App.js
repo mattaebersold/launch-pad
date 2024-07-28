@@ -15,6 +15,7 @@ import Header from "./components/globals/Header";
 // pages
 import ButtonPage from "./pages/atoms/Button";
 import InputPage from "./pages/atoms/Input";
+import SelectPage from "./pages/atoms/Select";
 import StateSelect from "./pages/molecules/StateSelect";
 import ButtonListPage from "./pages/molecules/ButtonList";
 import HalfBlockPage from "./pages/organisms/HalfBlock";
@@ -31,6 +32,7 @@ function App() {
 
             <Route path="/atoms/button" element={<ButtonPage />} />
             <Route path="/atoms/input" element={<InputPage />} />
+            <Route path="/atoms/select" element={<SelectPage />} />
             <Route path="/molecules/state-select" element={<StateSelect />} />
 
             <Route path="/molecules/button-list" element={<ButtonListPage />} />

@@ -8,12 +8,17 @@ const Sidebar = () => {
 			<div className="w-[200px] p-6 mr-12 bg-black/50 rounded-[10px] shrink-0">
 				<Badge color="cyan">Atoms</Badge>
 				<ul className="mt-3 mb-12">
+	
+					<li className="ml-0">
+						<LaunchPadNavLink to="/atoms/select" label="Select" />
+					</li>
+	
 					{/* <li className="ml-0">
 						<LaunchPadNavLink to="/atoms/button" label="Button" />
-					</li>
+					</li> */}
 					<li className="ml-0">	
 						<LaunchPadNavLink to="/atoms/input" label="Input" />					
-					</li> */}
+					</li>
 					
 				</ul>
 
