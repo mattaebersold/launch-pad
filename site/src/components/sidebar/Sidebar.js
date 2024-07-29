@@ -44,6 +44,9 @@ const Sidebar = () => {
 					<li className="ml-0">
 						<LaunchPadNavLink to="/organisms/dropdown-menu" label="Dropdown Menu" />
 					</li>
+					<li className="ml-0">
+						<LaunchPadNavLink to="/organisms/grid" label="Grid" />
+					</li>
 					{/* <li className="ml-0">
 						<LaunchPadNavLink to="/organisms/half-block" label="Half Block" />
 					</li> */}

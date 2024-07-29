@@ -23,6 +23,7 @@ import MenuPage from "./pages/molecules/Menu";
 
 import HalfBlockPage from "./pages/organisms/HalfBlock";
 import DropdownMenuPage from "./pages/organisms/DropdownMenu"
+import GridPage from "./pages/organisms/Grid"
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
 
             <Route path="/organisms/dropdown-menu" element={<DropdownMenuPage />} />
             <Route path="/organisms/half-block" element={<HalfBlockPage />} />
+            <Route path="/organisms/grid" element={<GridPage />} />
           </Routes>
         </div>
       </BrowserRouter>
