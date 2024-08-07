@@ -16,6 +16,8 @@ import Header from "./components/globals/Header";
 import ButtonPage from "./pages/atoms/Button";
 import InputPage from "./pages/atoms/Input";
 import SelectPage from "./pages/atoms/Select";
+import CheckboxPage from "./pages/atoms/Checkbox";
+import RadioGroupPage from "./pages/atoms/RadioGroup";
 
 import StateSelect from "./pages/molecules/StateSelect";
 import ButtonListPage from "./pages/molecules/ButtonList";
@@ -38,6 +40,8 @@ function App() {
             <Route path="/atoms/button" element={<ButtonPage />} />
             <Route path="/atoms/input" element={<InputPage />} />
             <Route path="/atoms/select" element={<SelectPage />} />
+            <Route path="/atoms/checkbox" element={<CheckboxPage />} />
+            <Route path="/atoms/radio-group" element={<RadioGroupPage />} />
 
             <Route path="/molecules/state-select" element={<StateSelect />} />
             <Route path="/molecules/button-list" element={<ButtonListPage />} />

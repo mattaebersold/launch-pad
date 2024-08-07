@@ -20,6 +20,14 @@ const Sidebar = () => {
 					<li className="ml-0">	
 						<LaunchPadNavLink to="/atoms/input" label="Input" />					
 					</li>
+
+					<li className="ml-0">	
+						<LaunchPadNavLink to="/atoms/checkbox" label="Checkbox" />					
+					</li>
+
+					<li className="ml-0">	
+						<LaunchPadNavLink to="/atoms/radio-group" label="Radio Group" />					
+					</li>
 					
 				</ul>
 

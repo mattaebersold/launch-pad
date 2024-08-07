@@ -3,8 +3,10 @@ import Sidebar from "../../components/sidebar/Sidebar"
 import { LPSelect, LPSelectItem } from "../../components/launch-pad/atoms/LPSelect"
 import { Badge } from '@radix-ui/themes';
 import { CopyBlock, dracula } from 'react-code-blocks';
+import { useForm, FormProvider } from 'react-hook-form';
 
 const StateSelectPage = () => {
+	const form = useForm();
 
 	const install = `
     yarn add @radix-ui/react-icons
@@ -14,18 +16,26 @@ const StateSelectPage = () => {
 	const usage = `
 	
 import { LPSelect, LPSelectItem } from '../atoms/LPSelect';
+import { useForm, FormProvider } from 'react-hook-form';
 
 const SelectExample = () => {
-  return (
+	const form = useForm();
+  
+	return (
 
-    <LPSelect
-      elemeneName='NAME'
-      elementId='ID'
-      placeholder='PLACEHOLDER' 
-      label='state'>
-      
-      <LPSelectItem  value="VALUE">VALUE</LPSelectItem>
-		</LPSelect>
+    <FormProvider {...form}>
+			<form>
+				<LPSelect
+					name='select-example'
+					elementId='select-example'
+					placeholder='Select Placeholder' 
+					label='Favorite Car Brand'>
+						<LPSelectItem value="Porsche">Porsche</LPSelectItem>
+						<LPSelectItem value="Ferrari">Ferrari</LPSelectItem>
+						<LPSelectItem value="Lamborghini">Lamborghini</LPSelectItem>
+				</LPSelect>
+			</form>
+		</FormProvider>
 	)
 }
 
@@ -36,7 +46,9 @@ export default SelectExample;
 	const code = `
 import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from '@radix-ui/react-icons';
 import * as Select from '@radix-ui/react-select';
+import { LPLabel } from "./LPLabel";
 import React from 'react';
+import { Controller } from 'react-hook-form';
 
 
 // Define SelectItem component first
@@ -65,8 +77,9 @@ export const LPSelectItem = React.forwardRef(({ children, ...props }, forwardedR
 LPSelectItem.displayName = 'SelectItem';
 
 export const LPSelect = ({
+  control,
+  name,
   elementId,
-  elementName,
 	label,
 	placeholder,
 	children
@@ -74,49 +87,56 @@ export const LPSelect = ({
   return (
 
     <div id={elementId}>
-      <Select.Root name={elementName}>
-        <Select.Trigger className="
-					SelectTrigger 
-					border-[1px]
-					text-black
-					border-black 
-					focus:border-purple 
-					focus:border-purple 
-					inline-flex 
-					items-center 
-					justify-center 
-					rounded-lg 
-					px-4 
-					gap-1 
-					leading-none 
-					h-9 
-					bg-white
-					shadow-md 
-					hover:bg-mauve-3 
-					focus:shadow-outline 
-					focus:outline-none" aria-label={label}>
-          <Select.Value placeholder={placeholder} />
-          <Select.Icon className="SelectIcon">
-            <ChevronDownIcon />
-          </Select.Icon>
-        </Select.Trigger>
-        <Select.Portal>
-          <Select.Content className="SelectContent overflow-hidden bg-white rounded-xl shadow-xl">
-            <Select.ScrollUpButton className="SelectScrollButton flex items-center justify-center h-9 bg-white  cursor-default">
-              <ChevronUpIcon />
-            </Select.ScrollUpButton>
-            <Select.Viewport className="SelectViewport p-1">
-              <Select.Group>
-                {children}
-              </Select.Group>
-            </Select.Viewport>
-            <Select.ScrollDownButton className="SelectScrollButton">
+			<LPLabel htmlFor={name}>{label}</LPLabel>
+      <Controller
+        name={name}
+        control={control}
+        render={({ field: { onChange, value } }) => (
+        <Select.Root name={name}>
+          <Select.Trigger className="
+            SelectTrigger 
+            border-[1px]
+            text-black
+            border-black 
+            focus:border-purple 
+            focus:border-purple 
+            inline-flex 
+            items-center 
+            justify-center 
+            rounded-lg 
+            px-4 
+            gap-1 
+            leading-none 
+            h-9 
+            bg-white
+            shadow-md 
+            hover:bg-mauve-3 
+            focus:shadow-outline 
+            focus:outline-none" aria-label={label}>
+            <Select.Value placeholder={placeholder} />
+            <Select.Icon className="SelectIcon">
               <ChevronDownIcon />
-            </Select.ScrollDownButton>
-          </Select.Content>
-        </Select.Portal>
-      </Select.Root>
-    </div>
+            </Select.Icon>
+          </Select.Trigger>
+          <Select.Portal>
+            <Select.Content className="SelectContent overflow-hidden bg-white rounded-xl shadow-xl">
+              <Select.ScrollUpButton className="SelectScrollButton flex items-center justify-center h-9 bg-white  cursor-default">
+                <ChevronUpIcon />
+              </Select.ScrollUpButton>
+              <Select.Viewport className="SelectViewport p-1">
+                <Select.Group>
+                  {children}
+                </Select.Group>
+              </Select.Viewport>
+              <Select.ScrollDownButton className="SelectScrollButton">
+                <ChevronDownIcon />
+              </Select.ScrollDownButton>
+            </Select.Content>
+          </Select.Portal>
+        </Select.Root>
+      )}
+    />
+  </div>
 
   )
 
@@ -133,15 +153,21 @@ export const LPSelect = ({
 
 				<div className="my-12">
 					<h2 className="mb-3">Example</h2>
-					<LPSelect
-						elemeneName='select-example'
-						elementId='select-example'
-						placeholder='Select Placeholder' 
-						label='select-example'>
-							<LPSelectItem value="Porsche">Porsche</LPSelectItem>
-							<LPSelectItem value="Ferrari">Ferrari</LPSelectItem>
-							<LPSelectItem value="Lamborghini">Lamborghini</LPSelectItem>
-					</LPSelect>
+
+					<FormProvider {...form}>
+						<form>
+							<LPSelect
+								name='select-example'
+								elementId='select-example'
+								placeholder='Select Placeholder' 
+								label='Favorite Car Brand'>
+									<LPSelectItem value="Porsche">Porsche</LPSelectItem>
+									<LPSelectItem value="Ferrari">Ferrari</LPSelectItem>
+									<LPSelectItem value="Lamborghini">Lamborghini</LPSelectItem>
+							</LPSelect>
+						</form>
+					</FormProvider>
+					
 				</div>
 
 				<div className="my-12">
