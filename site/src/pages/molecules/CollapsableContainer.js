@@ -47,8 +47,8 @@ export default function CollapsableContentExample() {
 		<LayoutContainer>
 			<Sidebar />
 			<LayoutMainColumn>
-				<Badge color="cyan">Atom</Badge>
-				<LayoutHeading text="Divider" />
+				<Badge color="orange">Molecule</Badge>
+				<LayoutHeading text="Collapsable Container" />
 
 				<div className="my-12">
 					<h2 className="mb-3">Example</h2>

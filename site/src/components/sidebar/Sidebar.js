@@ -62,7 +62,7 @@ const Sidebar = () => {
 				<LPDivider theme='dark' />	
 
 				{/* Molecules */}
-				<LPCollapsableContainer startShown={false}>
+				<LPCollapsableContainer startShown={true}>
 
 					<LPCollapsableContainerHeading>
 						<Badge color="orange">Molecules</Badge>
@@ -95,7 +95,7 @@ const Sidebar = () => {
 				<LPDivider theme='dark' />	
 
 				{/* Organisms */}
-				<LPCollapsableContainer startShown={false}>
+				<LPCollapsableContainer startShown={true}>
 
 					<LPCollapsableContainerHeading>
 						<Badge color="green">Organisms</Badge>
