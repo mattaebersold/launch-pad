@@ -15,6 +15,10 @@ const Header = () => {
 
         <ul className="flex items-center">
           <li className="mx-3">
+            <LaunchPadNavLink to="/to-do" label="Upcoming" />
+          </li>
+
+          <li className="mx-3">
             <LaunchPadNavLink to="/demos" label="Demos" />
           </li>
           <li className="mx-3 text-3xl">

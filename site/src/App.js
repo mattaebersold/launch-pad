@@ -10,6 +10,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // pages and components
 import Home from "./pages/Home";
 import Demos from "./pages/Demos";
+import Upcoming from "./pages/Upcoming";
 import Header from "./components/globals/Header";
 
 // pages
@@ -40,6 +41,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/demos" element={<Demos />} />
+            <Route path="/to-do" element={<Upcoming />} />
 
             <Route path="/atoms/button" element={<ButtonPage />} />
             <Route path="/atoms/input" element={<InputPage />} />
