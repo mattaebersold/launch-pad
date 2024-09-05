@@ -5,6 +5,12 @@ import { CopyBlock, dracula } from 'react-code-blocks';
 import { LPRadioGroup, LPRadioItem } from "../../components/launch-pad/atoms/LPRadio";
 import { useForm, FormProvider } from 'react-hook-form';
 
+import {
+	LayoutContainer,
+	LayoutMainColumn,
+	LayoutHeading
+} from "../../components/globals/layout/Layout"
+
 const RadioGroup = () => {
 	const form = useForm();
 
@@ -90,11 +96,11 @@ export const LPRadioGroup = ({
 	
 
 	return (
-		<div className="flex items-start w-11/12 max-w-[1400px] mx-auto py-12">
+		<LayoutContainer>
 			<Sidebar />
-			<div className="grow relative">
+			<LayoutMainColumn>
 				<Badge color="cyan">Atom</Badge>
-				<h1 className="text-3xl font-bold mb-6">Radio Group</h1>
+				<LayoutHeading text="Radio Group" />
 
 				<div className="my-12">
 					<h2 className="mb-3">Example</h2>
@@ -133,8 +139,8 @@ export const LPRadioGroup = ({
 						wrapLines
 					/>
 				</div>
-			</div>
-		</div>
+			</LayoutMainColumn>
+		</LayoutContainer>
 	);
 };
 

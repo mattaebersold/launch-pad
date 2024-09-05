@@ -5,7 +5,7 @@ import { FaGithub, FaRocket } from "react-icons/fa";
 
 const Header = () => {
   return (
-    <header className="mb-5">
+    <header className="mb-5 bg-black/50 border-b-2 border-b-black">
       <div className="flex items-center justify-between py-6 w-11/12 max-w-[1400px] mx-auto">
 
         <Link to="/" className="flex items-center font-bold">

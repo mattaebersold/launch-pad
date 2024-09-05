@@ -5,6 +5,12 @@ import { CopyBlock, dracula } from 'react-code-blocks';
 
 import { LPButton } from "../../components/launch-pad/atoms/LPButton"
 
+import {
+	LayoutContainer,
+	LayoutMainColumn,
+	LayoutHeading
+} from "../../components/globals/layout/Layout"
+
 const Button = () => {
 
 	const code = `
@@ -27,11 +33,11 @@ export default ButtonExample;
 	`
 
   return (
-    <div className="flex items-start w-11/12 max-w-[1400px] mx-auto py-12">
+    <LayoutContainer>
       <Sidebar />
-      <div className="grow relative">
+      <LayoutMainColumn>
 				<Badge color="cyan">Atom</Badge>
-        <h1 className="text-3xl font-bold mb-6">Button</h1>
+				<LayoutHeading text="Button" />
 
 				<div className="my-12">
 					<h2 className="mb-3">Example</h2>
@@ -84,8 +90,8 @@ export default ButtonExample;
 					/>
 				</div>
 
-      </div>
-    </div>
+      </LayoutMainColumn>
+    </LayoutContainer>
   );
 };
 

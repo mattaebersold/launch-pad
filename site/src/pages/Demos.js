@@ -1,14 +1,22 @@
 import React from "react";
 import Sidebar from "../components/sidebar/Sidebar"
 
+import {
+	LayoutContainer,
+	LayoutMainColumn,
+	LayoutHeading
+} from "../components/globals/layout/Layout"
+
+
 const Demos = () => {
   return (
-    <div className="flex items-start w-11/12 max-w-[1400px] mx-auto py-12">
+    <LayoutContainer>
       <Sidebar />
-      <div className="grow relative">
-        <h1 className="text-3xl font-bold">Demos</h1>
-      </div>
-    </div>
+      <LayoutMainColumn>
+        <LayoutHeading text="Demos" />
+        <p>Coming Soon</p>
+      </LayoutMainColumn>
+    </LayoutContainer>
   );
 };
 

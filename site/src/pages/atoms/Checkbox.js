@@ -5,6 +5,12 @@ import { CopyBlock, dracula } from 'react-code-blocks';
 import LPCheckbox from "../../components/launch-pad/atoms/LPCheckbox";
 import { useForm, FormProvider } from 'react-hook-form';
 
+import {
+	LayoutContainer,
+	LayoutMainColumn,
+	LayoutHeading
+} from "../../components/globals/layout/Layout"
+
 const Input = () => {
 	const form = useForm();
 	const { register } = form;
@@ -87,11 +93,11 @@ export default LPCheckbox;
 	
 
 	return (
-		<div className="flex items-start w-11/12 max-w-[1400px] mx-auto py-12">
+		<LayoutContainer>
 			<Sidebar />
-			<div className="grow relative">
+			<LayoutMainColumn>
 				<Badge color="cyan">Atom</Badge>
-				<h1 className="text-3xl font-bold mb-6">Checkbox</h1>
+				<LayoutHeading text="Checkbox" />
 
 				<div className="my-12">
 					<h2 className="mb-3">Example</h2>
@@ -128,8 +134,8 @@ export default LPCheckbox;
 						wrapLines
 					/>
 				</div>
-			</div>
-		</div>
+			</LayoutMainColumn>
+		</LayoutContainer>
 	);
 };
 

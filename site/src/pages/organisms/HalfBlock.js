@@ -3,6 +3,12 @@ import Sidebar from "../../components/sidebar/Sidebar"
 import { Badge } from '@radix-ui/themes';
 import { CopyBlock, dracula } from 'react-code-blocks';
 
+import {
+	LayoutContainer,
+	LayoutMainColumn,
+	LayoutHeading
+} from "../../components/globals/layout/Layout"
+
 const HalfBlock = () => {
 
 	const code = `
@@ -21,11 +27,11 @@ const HalfBlock = () => {
 	
 
   return (
-    <div className="flex items-start w-11/12 max-w-[1400px] mx-auto py-12">
+    <LayoutContainer>
       <Sidebar />
-      <div className="grow relative">
+      <LayoutMainColumn>
 				<Badge color="green">Organism</Badge>
-        <h1 className="text-3xl font-bold mb-6">Half Block</h1>
+				<LayoutHeading text="Half Block" />
 
 				<div className="my-12">
 					<h2 className="mb-3">Example</h2>
@@ -47,8 +53,8 @@ const HalfBlock = () => {
 						wrapLines
 					/>
 				</div>
-      </div>
-    </div>
+      </LayoutMainColumn>
+    </LayoutContainer>
   );
 };
 

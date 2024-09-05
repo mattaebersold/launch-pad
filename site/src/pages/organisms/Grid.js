@@ -4,6 +4,12 @@ import { Badge } from '@radix-ui/themes';
 import { CopyBlock, dracula } from 'react-code-blocks';
 import LPGrid from "../../components/launch-pad/organisms/LPGrid"
 
+import {
+	LayoutContainer,
+	LayoutMainColumn,
+	LayoutHeading
+} from "../../components/globals/layout/Layout"
+
 const Grid = () => {
 
 	const code = `
@@ -27,11 +33,11 @@ const Grid = () => {
 	const cells = Array(8).fill('Cell');
 
   return (
-    <div className="flex items-start w-11/12 max-w-[1400px] mx-auto py-12">
+    <LayoutContainer>
       <Sidebar />
-      <div className="grow relative">
+      <LayoutMainColumn>
 				<Badge color="green">Organism</Badge>
-        <h1 className="text-3xl font-bold mb-6">Grid</h1>
+				<LayoutHeading text="" />
 
 				<div className="my-12">
 					<h2 className="mb-3">Example</h2>
@@ -57,8 +63,8 @@ const Grid = () => {
 						wrapLines
 					/>
 				</div>
-      </div>
-    </div>
+      </LayoutMainColumn>
+    </LayoutContainer>
   );
 };
 

@@ -2,7 +2,7 @@ import React from "react";
 import Sidebar from "../../components/sidebar/Sidebar"
 import { Badge } from '@radix-ui/themes';
 import { CopyBlock, dracula } from 'react-code-blocks';
-import { LPInput } from "../../components/launch-pad/atoms/LPInput";
+import { LPDivider } from "../../components/launch-pad/atoms/LPDivider";
 
 import {
 	LayoutContainer,
@@ -14,44 +14,39 @@ const Input = () => {
 
 	const code = `
 import React from 'react';
-import { LPInput } from "../../components/launch-pad/atoms/LPInput";
+import { LPDivider } from "../../components/launch-pad/atoms/LPDivider";
 
-export default function InputExample() {
+export default function DividerExample() {
 	return (
-		<LPInput 
-			name='name'
-			label='label' 
-			type='type' 
-		/>
+		<LPDivider theme='dark' />
 	);
 }
 		`
 	
-
 	return (
 		<LayoutContainer>
 			<Sidebar />
 			<LayoutMainColumn>
 				<Badge color="cyan">Atom</Badge>
-				<LayoutHeading text="Input" />
+				<LayoutHeading text="Divider" />
 
 				<div className="my-12">
 					<h2 className="mb-3">Example</h2>
-					<LPInput name='name' label='label' type='type' />
+					<LPDivider theme='dark' />
 				</div>
 
 				<div className="my-12">
 					<h2 className="mb-3">Params</h2>
 					<ul>
-						<li className="flex items-center my-3"><pre className="mr-2 bg-black/80 p-1 px-3 rounded-[5px]">name</pre> - input element name</li>
-						<li className="flex items-center my-3"><pre className="mr-2 bg-black/80 p-1 px-3 rounded-[5px]">label</pre> - label</li>
-						<li className="flex items-center my-3"><pre className="mr-2 bg-black/80 p-1 px-3 rounded-[5px]">type</pre> - type of the input (text, number, password)</li>
+						<li className="flex items-center my-3"><pre className="mr-2 bg-black/80 p-1 px-3 rounded-[5px]">theme</pre> - 'dark' or 'light'</li>
 					</ul>
 				</div>
 
 				<div className="my-12">
 					<h2 className="mb-3">Variants</h2>
 					<p>Variant examples</p>
+
+					<LPDivider theme='light' />
 				</div>
 				
 				<div className="my-12">

@@ -2,64 +2,128 @@ import React from "react";
 import LaunchPadNavLink from "../globals/LaunchPadNavLink"
 import { Badge } from '@radix-ui/themes';
 
+import { LPSidebar } from "../launch-pad/organisms/LPSidebar"
+import { LPDivider } from "../launch-pad/atoms/LPDivider"
+
+import { 
+	LPCollapsableContainer,
+	LPCollapsableContainerHeading,
+	LPCollapsableContainerContent
+} from "../launch-pad/organisms/LPCollapsableContainer"
+
 const Sidebar = () => {
   return (
 		<>
-			<div className="w-[200px] p-6 mr-12 bg-black/50 rounded-[10px] shrink-0">
-				<Badge color="cyan">Atoms</Badge>
-				<ul className="mt-3 mb-12">
-	
-					<li className="ml-0">
-						<LaunchPadNavLink to="/atoms/select" label="Select" />
-					</li>
-	
-					<li className="ml-0">
-						<LaunchPadNavLink to="/atoms/button" label="Button" />
-					</li>
-					
-					<li className="ml-0">	
-						<LaunchPadNavLink to="/atoms/input" label="Input" />					
-					</li>
+			<LPSidebar>
 
-					<li className="ml-0">	
-						<LaunchPadNavLink to="/atoms/checkbox" label="Checkbox" />					
-					</li>
+				{/* Atoms */}
+				<LPCollapsableContainer startShown={true}>
 
-					<li className="ml-0">	
-						<LaunchPadNavLink to="/atoms/radio-group" label="Radio Group" />					
-					</li>
-					
-				</ul>
+					<LPCollapsableContainerHeading>
+						<Badge color="cyan">Atoms</Badge>
+					</LPCollapsableContainerHeading>
 
-				<Badge color="orange">Molecules</Badge>
-				<ul className="my-3 mb-12">
-					{/* <li className="ml-0">
-						<LaunchPadNavLink to="/molecules/button-list" label="Button List" />
-					</li> */}
-					<li className="ml-0">	
-						<LaunchPadNavLink to="/molecules/state-select" label="State Select" />					
-					</li>
+					<LPCollapsableContainerContent>
+						<ul className="my-3">
+							
+							<li className="ml-0">
+								<LaunchPadNavLink to="/atoms/select" label="Select" />
+							</li>
 
-					<li className="ml-0">
-						<LaunchPadNavLink to="/molecules/menu" label="Menu" />
-					</li>
+							<li className="ml-0">
+								<LaunchPadNavLink to="/atoms/button" label="Button" />
+							</li>
+							
+							<li className="ml-0">	
+								<LaunchPadNavLink to="/atoms/input" label="Input" />					
+							</li>
 
-				</ul>
+							<li className="ml-0">	
+								<LaunchPadNavLink to="/atoms/checkbox" label="Checkbox" />					
+							</li>
+
+							<li className="ml-0">	
+								<LaunchPadNavLink to="/atoms/radio-group" label="Radio Group" />					
+							</li>
+
+							<li className="ml-0">	
+								<LaunchPadNavLink to="/atoms/light-switch" label="Light Switch" />					
+							</li>
+
+							<li className="ml-0">	
+								<LaunchPadNavLink to="/atoms/divider" label="Divider" />					
+							</li>
+							
+						</ul>
+					</LPCollapsableContainerContent>
+		
+				</LPCollapsableContainer>
+
+				<LPDivider theme='dark' />	
+
+				{/* Molecules */}
+				<LPCollapsableContainer startShown={false}>
+
+					<LPCollapsableContainerHeading>
+						<Badge color="orange">Molecules</Badge>
+					</LPCollapsableContainerHeading>
+
+					<LPCollapsableContainerContent>
+						<ul className="my-3">
+							<li className="ml-0">
+								<LaunchPadNavLink to="/molecules/button-list" label="Button List" />
+							</li>
+
+							<li className="ml-0">	
+								<LaunchPadNavLink to="/molecules/state-select" label="State Select" />					
+							</li>
+
+							<li className="ml-0">
+								<LaunchPadNavLink to="/molecules/menu" label="Menu" />
+							</li>
+
+							<li className="ml-0">
+								<LaunchPadNavLink to="/molecules/collapsable-container" label="Collapsable Container" />
+							</li>
+
+						</ul>
+					</LPCollapsableContainerContent>
 
 
-				<Badge color="green">Organisms</Badge>
-				<ul className="mt-3 mb-6">
-					<li className="ml-0">
-						<LaunchPadNavLink to="/organisms/dropdown-menu" label="Dropdown Menu" />
-					</li>
-					<li className="ml-0">
-						<LaunchPadNavLink to="/organisms/grid" label="Grid" />
-					</li>
-					{/* <li className="ml-0">
-						<LaunchPadNavLink to="/organisms/half-block" label="Half Block" />
-					</li> */}
-				</ul>
-			</div>
+				</LPCollapsableContainer>
+
+				<LPDivider theme='dark' />	
+
+				{/* Organisms */}
+				<LPCollapsableContainer startShown={false}>
+
+					<LPCollapsableContainerHeading>
+						<Badge color="green">Organisms</Badge>
+					</LPCollapsableContainerHeading>
+
+					<LPCollapsableContainerContent>
+						<ul className="my-3">
+							<li className="ml-0">
+								<LaunchPadNavLink to="/organisms/dropdown-menu" label="Dropdown Menu" />
+							</li>
+							<li className="ml-0">
+								<LaunchPadNavLink to="/organisms/grid" label="Grid" />
+							</li>
+							<li className="ml-0">
+								<LaunchPadNavLink to="/organisms/sidebar" label="Sidebar" />
+							</li>
+							{/* <li className="ml-0">
+								<LaunchPadNavLink to="/organisms/half-block" label="Half Block" />
+							</li> */}
+						</ul>
+					</LPCollapsableContainerContent>
+
+
+				</LPCollapsableContainer>
+
+			</LPSidebar>
+			
+		
 		</>
   );
 };

@@ -15,6 +15,12 @@ import {
 
 import { LPButton } from "../../components/launch-pad/atoms/LPButton"
 
+import {
+	LayoutContainer,
+	LayoutMainColumn,
+	LayoutHeading
+} from "../../components/globals/layout/Layout"
+
 const HalfBlock = () => {
 
 	const code = `
@@ -56,11 +62,11 @@ export default DropdownMenuExample;
 	
 
   return (
-    <div className="flex items-start w-11/12 max-w-[1400px] mx-auto py-12">
+    <LayoutContainer>
       <Sidebar />
-      <div className="grow relative">
+      <LayoutMainColumn>
 				<Badge color="green">Organism</Badge>
-        <h1 className="text-3xl font-bold mb-6">Dropdown Menu</h1>
+				<LayoutHeading text="Dropdown Menu" />
 
 				<div className="my-12">
 					<h2 className="mb-3">Example</h2>
@@ -97,8 +103,8 @@ export default DropdownMenuExample;
 						wrapLines
 					/>
 				</div>
-      </div>
-    </div>
+      </LayoutMainColumn>
+    </LayoutContainer>
   );
 };
 

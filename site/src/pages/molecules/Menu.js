@@ -9,6 +9,12 @@ import { LPLabel } from "../../components/launch-pad/atoms/LPLabel"
 
 import { LPMenu } from "../../components/launch-pad/molecules/LPMenu"
 
+import {
+	LayoutContainer,
+	LayoutMainColumn,
+	LayoutHeading
+} from "../../components/globals/layout/Layout"
+
 const MenuPage = () => {
 
 	const code = `
@@ -40,11 +46,11 @@ export default MenuExample;
 	`
 
   return (
-    <div className="flex items-start w-11/12 max-w-[1400px] mx-auto py-12">
+    <LayoutContainer>
       <Sidebar />
-      <div className="grow relative">
+      <LayoutMainColumn>
 				<Badge color="orange">Molecule</Badge>
-        <h1 className="text-3xl font-bold mb-6">Menu</h1>
+				<LayoutHeading text="Menu" />
 
 				<div className="my-12">
 					<h2 className="mb-3">Example</h2>
@@ -69,8 +75,8 @@ export default MenuExample;
 					/>
 				</div>
 
-      </div>
-    </div>
+      </LayoutMainColumn>
+    </LayoutContainer>
   );
 };
 
