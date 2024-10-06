@@ -1,6 +1,5 @@
 import React from "react";
 import Sidebar from "../../components/sidebar/Sidebar"
-import { Badge } from '@radix-ui/themes';
 import { CopyBlock, dracula } from 'react-code-blocks';
 
 import {
@@ -103,81 +102,93 @@ export default function DividerExample() {
 		<LayoutContainer>
 			<Sidebar />
 			<LayoutMainColumn>
-				<Badge color="green">Organism</Badge>
-				<LayoutHeading text="Sidebar" />
+				<LayoutHeading text="Sidebar" badge="Organism" />
 
-				<div className="my-12">
-					<h2 className="mb-3">Example</h2>
-					<LPSidebar>
+				<div className="px-6 border-b-2 border-black">
+					<LPCollapsableContainer startShown={true}>
+						<LPCollapsableContainerHeading>
+							<h2>Example</h2>
+						</LPCollapsableContainerHeading>
+						<LPCollapsableContainerContent>
+						<LPSidebar>
 
-						<LPCollapsableContainer startShown={true}>
+							<LPCollapsableContainer startShown={true}>
+
+								<LPCollapsableContainerHeading>
+									<p>Container 1</p>
+								</LPCollapsableContainerHeading>
+
+								<LPCollapsableContainerContent>
+									<p>Container Item</p>
+									<p>Container Item</p>
+									<p>Container Item</p>
+									<p>Container Item</p>
+									<p>Container Item</p>
+									<p>Container Item</p>
+								</LPCollapsableContainerContent>
+
+							</LPCollapsableContainer>
+
+							<LPDivider theme='dark' />	
+
+							<LPCollapsableContainer startShown={false}>
 
 							<LPCollapsableContainerHeading>
-								<p>Container 1</p>
-							</LPCollapsableContainerHeading>
+									<p>Container 2</p>
+								</LPCollapsableContainerHeading>
 
-							<LPCollapsableContainerContent>
-								<p>Container Item</p>
-								<p>Container Item</p>
-								<p>Container Item</p>
-								<p>Container Item</p>
-								<p>Container Item</p>
-								<p>Container Item</p>
-							</LPCollapsableContainerContent>
-				
-						</LPCollapsableContainer>
+								<LPCollapsableContainerContent>
+									<p>Container Item</p>
+									<p>Container Item</p>
+									<p>Container Item</p>
+									<p>Container Item</p>
+									<p>Container Item</p>
+									<p>Container Item</p>
+								</LPCollapsableContainerContent>
 
-						<LPDivider theme='dark' />	
+							</LPCollapsableContainer>
 
-						<LPCollapsableContainer startShown={false}>
+							<LPDivider theme='dark' />	
 
+							<LPCollapsableContainer startShown={false}>
+
+							<LPCollapsableContainerHeading>
+									<p>Container 3</p>
+								</LPCollapsableContainerHeading>
+
+								<LPCollapsableContainerContent>
+									<p>Container Item</p>
+									<p>Container Item</p>
+									<p>Container Item</p>
+									<p>Container Item</p>
+									<p>Container Item</p>
+									<p>Container Item</p>
+								</LPCollapsableContainerContent>
+
+							</LPCollapsableContainer>
+
+							</LPSidebar>
+							<br />
+						</LPCollapsableContainerContent>
+					</LPCollapsableContainer>
+				</div>
+
+				<div className="px-6">
+					<LPCollapsableContainer startShown={false}>
 						<LPCollapsableContainerHeading>
-								<p>Container 2</p>
-							</LPCollapsableContainerHeading>
-
-							<LPCollapsableContainerContent>
-								<p>Container Item</p>
-								<p>Container Item</p>
-								<p>Container Item</p>
-								<p>Container Item</p>
-								<p>Container Item</p>
-								<p>Container Item</p>
-							</LPCollapsableContainerContent>
-
-						</LPCollapsableContainer>
-
-						<LPDivider theme='dark' />	
-
-						<LPCollapsableContainer startShown={false}>
-
-						<LPCollapsableContainerHeading>
-								<p>Container 3</p>
-							</LPCollapsableContainerHeading>
-
-							<LPCollapsableContainerContent>
-								<p>Container Item</p>
-								<p>Container Item</p>
-								<p>Container Item</p>
-								<p>Container Item</p>
-								<p>Container Item</p>
-								<p>Container Item</p>
-							</LPCollapsableContainerContent>
-
-						</LPCollapsableContainer>
-
-					</LPSidebar>
+							<h2>Source</h2>
+						</LPCollapsableContainerHeading>
+						<LPCollapsableContainerContent>
+							<CopyBlock
+								text={code}
+								language="react"
+								theme={dracula}
+								showLineNumbers
+								wrapLines />
+						</LPCollapsableContainerContent>
+					</LPCollapsableContainer>
 				</div>
 				
-				<div className="my-12">
-					<h2 className="mb-3">Source</h2>
-					<CopyBlock
-						text={code}
-						language="react"
-						theme={dracula}
-						showLineNumbers
-						wrapLines
-					/>
-				</div>
 			</LayoutMainColumn>
 		</LayoutContainer>
 	);

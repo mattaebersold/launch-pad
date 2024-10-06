@@ -1,15 +1,24 @@
 import React from "react";
 import Sidebar from "../../components/sidebar/Sidebar"
 import { LPSelect, LPSelectItem } from "../../components/launch-pad/atoms/LPSelect"
-import { Badge } from '@radix-ui/themes';
 import { CopyBlock, dracula } from 'react-code-blocks';
 import { useForm, FormProvider } from 'react-hook-form';
+import { 
+	LPCollapsableContainer,
+	LPCollapsableContainerHeading,
+	LPCollapsableContainerContent,
+} from "../../components/launch-pad/organisms/LPCollapsableContainer"
 
 import {
 	LayoutContainer,
 	LayoutMainColumn,
-	LayoutHeading
+	LayoutHeading,
 } from "../../components/globals/layout/Layout"
+
+import {
+	ParamContainer,
+	Param,
+} from "../../components/globals/Params"
 
 const StateSelectPage = () => {
 	const form = useForm();
@@ -154,71 +163,99 @@ export const LPSelect = ({
     <LayoutContainer>
       <Sidebar />
       <LayoutMainColumn>
-				<Badge color="cyan">Atom</Badge>
-				<LayoutHeading text="Select Dropdown" />
+				
+				<LayoutHeading text="Select Dropdown" badge="Atom" />
 
-				<div className="my-12">
-					<h2 className="mb-3">Example</h2>
-
-					<FormProvider {...form}>
-						<form>
-							<LPSelect
-								name='select-example'
-								elementId='select-example'
-								placeholder='Select Placeholder' 
-								label='Favorite Car Brand'>
-									<LPSelectItem value="Porsche">Porsche</LPSelectItem>
-									<LPSelectItem value="Ferrari">Ferrari</LPSelectItem>
-									<LPSelectItem value="Lamborghini">Lamborghini</LPSelectItem>
-							</LPSelect>
-						</form>
-					</FormProvider>
-					
+				<div className="px-6 border-b-2 border-black">
+					<LPCollapsableContainer startShown={true} outline>
+						<LPCollapsableContainerHeading>
+							<h2>Example</h2>
+						</LPCollapsableContainerHeading>
+						<LPCollapsableContainerContent>
+						<FormProvider {...form}>
+							<form className="py-6">
+								<LPSelect
+									name='select-example'
+									elementId='select-example'
+									placeholder='Select Placeholder' 
+									label='Favorite Car Brand'>
+										<LPSelectItem value="Porsche">Porsche</LPSelectItem>
+										<LPSelectItem value="Ferrari">Ferrari</LPSelectItem>
+										<LPSelectItem value="Lamborghini">Lamborghini</LPSelectItem>
+								</LPSelect>
+							</form>
+						</FormProvider>
+						</LPCollapsableContainerContent>
+					</LPCollapsableContainer>
 				</div>
 
-				<div className="my-12">
-					<h2 className="mb-3">Params</h2>
-					<ul>
-						<li className="flex items-center my-3"><pre className="mr-2 bg-black/80 p-1 px-3 rounded-[5px]">elemeneName</pre> - Names the root select element</li>
-						<li className="flex items-center my-3"><pre className="mr-2 bg-black/80 p-1 px-3 rounded-[5px]">elemeneId</pre> - ID Attribute for root container element</li>
-						<li className="flex items-center my-3"><pre className="mr-2 bg-black/80 p-1 px-3 rounded-[5px]">placeholder</pre> - Placeholder text for the select element</li>
-						<li className="flex items-center my-3"><pre className="mr-2 bg-black/80 p-1 px-3 rounded-[5px]">label</pre> - Optional label (also sets aria-label)</li>
-					</ul>
-				</div>
-
-				<div className="my-12">
-					<h2 className="mb-3">Install</h2>
-					<CopyBlock
-						text={install}
-						language="react"
-						theme={dracula}
-						showLineNumbers
-						wrapLines
-					/>
+				<div className="px-6 border-b-2 border-black">
+					<LPCollapsableContainer startShown={true} outline>
+						<LPCollapsableContainerHeading>
+							<h2>Params</h2>
+						</LPCollapsableContainerHeading>
+						<LPCollapsableContainerContent>
+							<ParamContainer>
+								<Param label="elemeneName" description="Names the root select element" />
+								<Param label="elemeneId" description="ID Attribute for root container element" />
+								<Param label="placeholder" description="Placeholder text for the select element" />
+								<Param label="label" description="Optional label (also sets aria-label)" />
+							</ParamContainer>
+						</LPCollapsableContainerContent>
+					</LPCollapsableContainer>
 				</div>
 				
-				<div className="my-12">
-					<h2 className="mb-3">Usage</h2>
-					<CopyBlock
-						className="w-[500px]"
-						text={usage}
-						language="react"
-						theme={dracula}
-						showLineNumbers
-						wrapLines
-					/>
+				<div className="px-6 border-b-2 border-black">
+					<LPCollapsableContainer startShown={false} outline>
+						<LPCollapsableContainerHeading>
+							<h2>Install</h2>
+						</LPCollapsableContainerHeading>
+						<LPCollapsableContainerContent>
+							<CopyBlock
+								text={install}
+								language="react"
+								theme={dracula}
+								showLineNumbers
+								wrapLines />
+						</LPCollapsableContainerContent>
+					</LPCollapsableContainer>
+				</div>
+
+
+				<div className="px-6 border-b-2 border-black">
+					<LPCollapsableContainer startShown={false} outline>
+						<LPCollapsableContainerHeading>
+							<h2>Usage</h2>
+						</LPCollapsableContainerHeading>
+						<LPCollapsableContainerContent>
+							<CopyBlock
+								className="w-[500px]"
+								text={usage}
+								language="react"
+								theme={dracula}
+								showLineNumbers
+								wrapLines />
+						</LPCollapsableContainerContent>
+					</LPCollapsableContainer>
 				</div>
 				
-				<div className="my-12">
-					<h2 className="mb-3">Source</h2>
-					<CopyBlock
-						text={code}
-						language="react"
-						theme={dracula}
-						showLineNumbers
-						wrapLines
-					/>
+
+				<div className="px-6">
+					<LPCollapsableContainer startShown={false} outline>
+						<LPCollapsableContainerHeading>
+							<h2>Source</h2>
+						</LPCollapsableContainerHeading>
+						<LPCollapsableContainerContent>
+							<CopyBlock
+								text={code}
+								language="react"
+								theme={dracula}
+								showLineNumbers
+								wrapLines />
+						</LPCollapsableContainerContent>
+					</LPCollapsableContainer>
 				</div>
+				
 
       </LayoutMainColumn>
     </LayoutContainer>

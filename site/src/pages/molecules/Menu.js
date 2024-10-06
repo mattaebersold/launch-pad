@@ -1,6 +1,5 @@
 import React from "react";
 import Sidebar from "../../components/sidebar/Sidebar"
-import { Badge } from '@radix-ui/themes';
 import { CopyBlock, dracula } from 'react-code-blocks';
 
 import { LPButton } from "../../components/launch-pad/atoms/LPButton"
@@ -8,6 +7,12 @@ import { LPSeparator } from "../../components/launch-pad/atoms/LPSeparator"
 import { LPLabel } from "../../components/launch-pad/atoms/LPLabel"
 
 import { LPMenu } from "../../components/launch-pad/molecules/LPMenu"
+
+import { 
+	LPCollapsableContainer,
+	LPCollapsableContainerHeading,
+	LPCollapsableContainerContent,
+} from "../../components/launch-pad/organisms/LPCollapsableContainer"
 
 import {
 	LayoutContainer,
@@ -49,30 +54,44 @@ export default MenuExample;
     <LayoutContainer>
       <Sidebar />
       <LayoutMainColumn>
-				<Badge color="orange">Molecule</Badge>
-				<LayoutHeading text="Menu" />
+				<LayoutHeading text="Menu" badge="Molecule" />
 
-				<div className="my-12">
-					<h2 className="mb-3">Example</h2>
-					<LPMenu>      
-						<LPLabel>My Account</LPLabel>
-						<LPSeparator />
-						<LPButton variant="link">Profile</LPButton>
-						<LPButton variant="link">Billing</LPButton>
-						<LPButton variant="link">Team</LPButton>
-						<LPButton variant="link">Subscription</LPButton>
-					</LPMenu>
+				<div className="px-6 border-b-2 border-black">
+					<LPCollapsableContainer startShown={true}>
+						<LPCollapsableContainerHeading>
+							<h2>Example</h2>
+						</LPCollapsableContainerHeading>
+						<LPCollapsableContainerContent>
+							<div className="mb-6">
+							<LPMenu>      
+								<LPLabel>My Account</LPLabel>
+								<LPSeparator />
+								<LPButton variant="link">Profile</LPButton>
+								<LPButton variant="link">Billing</LPButton>
+								<LPButton variant="link">Team</LPButton>
+								<LPButton variant="link">Subscription</LPButton>
+							</LPMenu>
+							</div>
+						</LPCollapsableContainerContent>
+					</LPCollapsableContainer>
 				</div>
 
-				<div className="my-12">
-					<h2 className="mb-3">Source</h2>
-					<CopyBlock
-						text={code}
-						language="react"
-						theme={dracula}
-						showLineNumbers
-						wrapLines
-					/>
+				<div className="px-6">
+					<LPCollapsableContainer startShown={false}>
+						<LPCollapsableContainerHeading>
+							<h2>Source</h2>
+						</LPCollapsableContainerHeading>
+						<LPCollapsableContainerContent>
+							<div className="mb-6">
+							<CopyBlock
+								text={code}
+								language="react"
+								theme={dracula}
+								showLineNumbers
+								wrapLines />
+							</div>
+						</LPCollapsableContainerContent>
+					</LPCollapsableContainer>
 				</div>
 
       </LayoutMainColumn>

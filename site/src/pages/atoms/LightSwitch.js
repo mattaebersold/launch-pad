@@ -1,6 +1,5 @@
 import React from "react";
 import Sidebar from "../../components/sidebar/Sidebar"
-import { Badge } from '@radix-ui/themes';
 import { CopyBlock, dracula } from 'react-code-blocks';
 import LPLightSwitch from "../../components/launch-pad/atoms/LPLightSwitch";
 import { useForm, FormProvider } from 'react-hook-form';
@@ -11,9 +10,14 @@ import {
 	LayoutHeading
 } from "../../components/globals/layout/Layout"
 
+import { 
+	LPCollapsableContainer,
+	LPCollapsableContainerHeading,
+	LPCollapsableContainerContent,
+} from "../../components/launch-pad/organisms/LPCollapsableContainer"
+
 const LightSwitch = () => {
 	const form = useForm();
-	const { register } = form;
 
 
 	const usage = `
@@ -37,35 +41,43 @@ export default function CheckboxExample() {
 }
 	`
 
-
-
 	return (
 		<LayoutContainer>
 			<Sidebar />
 			<LayoutMainColumn>
-				<Badge color="cyan">Atom</Badge>
-				<LayoutHeading text="Checkbox" />
+				<LayoutHeading text="Lightswitch" badge="Atom" />
 
-				<div className="my-12">
-					<h2 className="mb-3">Example</h2>
-					<FormProvider {...form}>
-						<form>
-							<LPLightSwitch 
-								name=''
-								label='Toggle Me' />
-						</form>
-					</FormProvider>
+				<div className="px-6 border-b-2 border-black">
+					<LPCollapsableContainer startShown={true}>
+						<LPCollapsableContainerHeading>
+							<h2>Example</h2>
+						</LPCollapsableContainerHeading>
+						<LPCollapsableContainerContent>
+							<FormProvider {...form}>
+								<form className="mb-4">
+									<LPLightSwitch 
+										name=''
+										label='Toggle Me' />
+								</form>
+							</FormProvider>
+						</LPCollapsableContainerContent>
+					</LPCollapsableContainer>
 				</div>
-				
-				<div className="my-12">
-					<h2 className="mb-3">Usage</h2>
-					<CopyBlock
-						text={usage}
-						language="react"
-						theme={dracula}
-						showLineNumbers
-						wrapLines
-					/>
+
+				<div className="px-6">
+					<LPCollapsableContainer startShown={false}>
+						<LPCollapsableContainerHeading>
+							<h2>Usage</h2>
+						</LPCollapsableContainerHeading>
+						<LPCollapsableContainerContent>
+							<CopyBlock
+								text={usage}
+								language="react"
+								theme={dracula}
+								showLineNumbers
+								wrapLines />
+						</LPCollapsableContainerContent>
+					</LPCollapsableContainer>
 				</div>
 
 			</LayoutMainColumn>

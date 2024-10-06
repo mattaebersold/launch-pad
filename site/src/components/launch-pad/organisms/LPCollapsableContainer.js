@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FaAngleDown } from "react-icons/fa";
 import AnimateHeight from 'react-animate-height';
 
-const LPCollapsableContainer = ({ startShown, children }) => {
+const LPCollapsableContainer = ({ startShown, children, outline }) => {
   const [isOpen, setIsOpen] = useState(startShown);
   const [height, setHeight] = useState(startShown ? 'auto' : 0);
 

@@ -14,7 +14,7 @@ const Demos = () => {
       <Sidebar />
       <LayoutMainColumn>
         <LayoutHeading text="Upcoming Additions" />
-        <ul>
+        <ul className="pt-5 pb-12 pl-4">
 					<li>- Add vertical margin options to the divider</li>
 					<li>- Collapse other lists within the wrapper when one is activated</li>
 					<li>- Make collapse others an option</li>

@@ -1,15 +1,25 @@
 import React from "react";
 import Sidebar from "../../components/sidebar/Sidebar"
-import { Badge } from '@radix-ui/themes';
 import { CopyBlock, dracula } from 'react-code-blocks';
 
 import { LPButton } from "../../components/launch-pad/atoms/LPButton"
+
+import { 
+	LPCollapsableContainer,
+	LPCollapsableContainerHeading,
+	LPCollapsableContainerContent,
+} from "../../components/launch-pad/organisms/LPCollapsableContainer"
 
 import {
 	LayoutContainer,
 	LayoutMainColumn,
 	LayoutHeading
 } from "../../components/globals/layout/Layout"
+
+import {
+	ParamContainer,
+	Param,
+} from "../../components/globals/Params"
 
 const Button = () => {
 
@@ -36,60 +46,75 @@ export default ButtonExample;
     <LayoutContainer>
       <Sidebar />
       <LayoutMainColumn>
-				<Badge color="cyan">Atom</Badge>
-				<LayoutHeading text="Button" />
+				<LayoutHeading badge="Atom" text="Button" />
 
-				<div className="my-12">
-					<h2 className="mb-3">Example</h2>
-					
-					<div className="my-4">
-						<LPButton>Button (Primary)</LPButton>
-					</div>
-					
-					<div className="my-4">
-						<LPButton variant='secondary'>Button (secondary)</LPButton>
-					</div>
-					
-					<div className="my-4">
-						<LPButton variant='destructive'>Button (destructive)</LPButton>
-					</div>
-					
-					<div className="my-4">
-						<LPButton variant='outline'>Button (outline)</LPButton>
-					</div>
+				<div className="px-6 border-b-2 border-black">
+					<LPCollapsableContainer startShown={true} outline>
+						<LPCollapsableContainerHeading>
+							<h2>Example</h2>
+						</LPCollapsableContainerHeading>
+						<LPCollapsableContainerContent>
+							<div className="my-4">
+								<LPButton>Button (Primary)</LPButton>
+							</div>
+							
+							<div className="my-4">
+								<LPButton variant='secondary'>Button (secondary)</LPButton>
+							</div>
+							
+							<div className="my-4">
+								<LPButton variant='destructive'>Button (destructive)</LPButton>
+							</div>
+							
+							<div className="my-4">
+								<LPButton variant='outline'>Button (outline)</LPButton>
+							</div>
 
-					<div className="my-4">
-						<LPButton variant='link'>Button (link)</LPButton>
-					</div>
-	
-					<div className="my-4">
-						<LPButton variant='ghost'>Button (ghost)</LPButton>
-					</div>
+							<div className="my-4">
+								<LPButton variant='link'>Button (link)</LPButton>
+							</div>
+			
+							<div className="my-4">
+								<LPButton variant='ghost'>Button (ghost)</LPButton>
+							</div>
+						</LPCollapsableContainerContent>
+					</LPCollapsableContainer>
 				</div>
 
-				<div className="my-12">
-					<h2 className="mb-3">Variations</h2>
-					<ul>
-						<li className="flex items-center my-3"><pre className="mr-2 bg-black/80 p-1 px-3 rounded-[5px]">primary (default)</pre> - light bg, dark text</li>
-						<li className="flex items-center my-3"><pre className="mr-2 bg-black/80 p-1 px-3 rounded-[5px]">secondary</pre> - dark bg, light text</li>
-						<li className="flex items-center my-3"><pre className="mr-2 bg-black/80 p-1 px-3 rounded-[5px]">destructive</pre> - red bg, light text</li>
-						<li className="flex items-center my-3"><pre className="mr-2 bg-black/80 p-1 px-3 rounded-[5px]">outline</pre> - white border, white text</li>
-						<li className="flex items-center my-3"><pre className="mr-2 bg-black/80 p-1 px-3 rounded-[5px]">link</pre> - no border, white text</li>
-						<li className="flex items-center my-3"><pre className="mr-2 bg-black/80 p-1 px-3 rounded-[5px]">ghost</pre> - border on hover</li>
-					</ul>
-				</div>
-				
-				<div className="my-12">
-					<h2 className="mb-3">Source</h2>
-					<CopyBlock
-						text={code}
-						language="react"
-						theme={dracula}
-						showLineNumbers
-						wrapLines
-					/>
+				<div className="px-6 border-b-2 border-black">
+					<LPCollapsableContainer startShown={true}>
+						<LPCollapsableContainerHeading>
+							<h2>Variations</h2>
+						</LPCollapsableContainerHeading>
+						<LPCollapsableContainerContent>
+							<ParamContainer>
+								<Param label="primary (default)" description="light bg, dark text" />
+								<Param label="secondary" description="dark bg, light text" />
+								<Param label="destructive" description="red bg, light text" />
+								<Param label="outline" description="white border, white text" />
+								<Param label="link" description="no border, white text" />
+								<Param label="ghost" description="border on hover" />
+							</ParamContainer>
+						</LPCollapsableContainerContent>
+					</LPCollapsableContainer>
 				</div>
 
+				<div className="px-6">
+					<LPCollapsableContainer startShown={false}>
+						<LPCollapsableContainerHeading>
+							<h2>Source</h2>
+						</LPCollapsableContainerHeading>
+						<LPCollapsableContainerContent>
+							<CopyBlock
+								text={code}
+								language="react"
+								theme={dracula}
+								showLineNumbers
+								wrapLines />
+						</LPCollapsableContainerContent>
+					</LPCollapsableContainer>
+				</div>
+			
       </LayoutMainColumn>
     </LayoutContainer>
   );

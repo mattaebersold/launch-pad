@@ -14,6 +14,7 @@ const Home = () => {
       <Sidebar />
       <LayoutMainColumn>
         <LayoutHeading text="Component Library" />
+        <img src="https://i.giphy.com/bUkXxGkGYb5bq.webp" className="block w-full" />
       </LayoutMainColumn>
     </LayoutContainer>
   );

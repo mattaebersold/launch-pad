@@ -1,8 +1,13 @@
 import React from "react";
 import Sidebar from "../../components/sidebar/Sidebar"
 import StateSelect from "../../components/launch-pad/molecules/StateSelect"
-import { Badge } from '@radix-ui/themes';
 import { CopyBlock, dracula } from 'react-code-blocks';
+
+import { 
+	LPCollapsableContainer,
+	LPCollapsableContainerHeading,
+	LPCollapsableContainerContent,
+} from "../../components/launch-pad/organisms/LPCollapsableContainer"
 
 import {
 	LayoutContainer,
@@ -94,34 +99,51 @@ export default StateSelect;
     <LayoutContainer>
       <Sidebar />
       <LayoutMainColumn>
-				<Badge color="orange">Molecule</Badge>
-        <LayoutHeading text="State Select Dropdown" />
+        <LayoutHeading text="State Select Dropdown" badge="Molecule" />
 
-				<div className="my-12">
-					<h2 className="mb-3">Example</h2>
-					<StateSelect />
+        <div className="px-6 border-b-2 border-black">
+					<LPCollapsableContainer startShown={true}>
+						<LPCollapsableContainerHeading>
+							<h2>Example</h2>
+						</LPCollapsableContainerHeading>
+						<LPCollapsableContainerContent>
+							<div className="mb-6">
+                <StateSelect />
+							</div>
+						</LPCollapsableContainerContent>
+					</LPCollapsableContainer>
 				</div>
 
-				<div className="my-12">
-					<h2 className="mb-3">Install</h2>
-					<CopyBlock
-						text={install}
-						language="react"
-						theme={dracula}
-						showLineNumbers
-						wrapLines
-					/>
+        <div className="px-6 border-b-2 border-black">
+					<LPCollapsableContainer startShown={false}>
+						<LPCollapsableContainerHeading>
+							<h2>Install</h2>
+						</LPCollapsableContainerHeading>
+						<LPCollapsableContainerContent>
+              <CopyBlock
+                text={install}
+                language="react"
+                theme={dracula}
+                showLineNumbers
+                wrapLines />
+						</LPCollapsableContainerContent>
+					</LPCollapsableContainer>
 				</div>
-				
-				<div className="my-12">
-					<h2 className="mb-3">Source</h2>
-					<CopyBlock
-						text={code}
-						language="react"
-						theme={dracula}
-						showLineNumbers
-						wrapLines
-					/>
+
+        <div className="px-6">
+					<LPCollapsableContainer startShown={false}>
+						<LPCollapsableContainerHeading>
+							<h2>Source</h2>
+						</LPCollapsableContainerHeading>
+						<LPCollapsableContainerContent>
+              <CopyBlock
+                text={code}
+                language="react"
+                theme={dracula}
+                showLineNumbers
+                wrapLines />
+						</LPCollapsableContainerContent>
+					</LPCollapsableContainer>
 				</div>
 
       </LayoutMainColumn>

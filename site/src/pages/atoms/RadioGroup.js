@@ -1,6 +1,5 @@
 import React from "react";
 import Sidebar from "../../components/sidebar/Sidebar"
-import { Badge } from '@radix-ui/themes';
 import { CopyBlock, dracula } from 'react-code-blocks';
 import { LPRadioGroup, LPRadioItem } from "../../components/launch-pad/atoms/LPRadio";
 import { useForm, FormProvider } from 'react-hook-form';
@@ -10,6 +9,12 @@ import {
 	LayoutMainColumn,
 	LayoutHeading
 } from "../../components/globals/layout/Layout"
+
+import { 
+	LPCollapsableContainer,
+	LPCollapsableContainerHeading,
+	LPCollapsableContainerContent,
+} from "../../components/launch-pad/organisms/LPCollapsableContainer"
 
 const RadioGroup = () => {
 	const form = useForm();
@@ -94,51 +99,63 @@ export const LPRadioGroup = ({
 	
 	`
 	
-
 	return (
 		<LayoutContainer>
 			<Sidebar />
 			<LayoutMainColumn>
-				<Badge color="cyan">Atom</Badge>
-				<LayoutHeading text="Radio Group" />
+				<LayoutHeading text="Radio Group" badge="Atom" />
 
-				<div className="my-12">
-					<h2 className="mb-3">Example</h2>
+				<div className="px-6 border-b-2 border-black">
+					<LPCollapsableContainer startShown={true}>
+						<LPCollapsableContainerHeading>
+							<h2>Example</h2>
+						</LPCollapsableContainerHeading>
+						<LPCollapsableContainerContent>
+							<FormProvider {...form}>
+								<form>
+									<LPRadioGroup name="brand" elementId='favoriteBrand' defaultValue='porsche' label='Favorite Brand'>
+										<LPRadioItem id='porsche' value='porsche' label='Porsche' />
+										<LPRadioItem id='lamborghini' value='lamborghini' label='Lamborghini' />
+										<LPRadioItem id='ferrari' value='ferrari' label='Ferrari' />
+									</LPRadioGroup>
+								</form>
+							</FormProvider>
+						</LPCollapsableContainerContent>
+					</LPCollapsableContainer>
+				</div>
 
-					<FormProvider {...form}>
-						<form>
-							<LPRadioGroup name="brand" elementId='favoriteBrand' defaultValue='porsche' label='Favorite Brand'>
-								<LPRadioItem id='porsche' value='porsche' label='Porsche' />
-								<LPRadioItem id='lamborghini' value='lamborghini' label='Lamborghini' />
-								<LPRadioItem id='ferrari' value='ferrari' label='Ferrari' />
-							</LPRadioGroup>
-						</form>
-					</FormProvider>
+				<div className="px-6 border-b-2 border-black">
+					<LPCollapsableContainer startShown={false}>
+						<LPCollapsableContainerHeading>
+							<h2>Usage</h2>
+						</LPCollapsableContainerHeading>
+						<LPCollapsableContainerContent>
+							<CopyBlock
+								text={code}
+								language="react"
+								theme={dracula}
+								showLineNumbers
+								wrapLines />
+						</LPCollapsableContainerContent>
+					</LPCollapsableContainer>
 				</div>
-				
-				
-				
-				<div className="my-12">
-					<h2 className="mb-3">Usage</h2>
-					<CopyBlock
-						text={code}
-						language="react"
-						theme={dracula}
-						showLineNumbers
-						wrapLines
-					/>
+
+				<div className="px-6">
+					<LPCollapsableContainer startShown={false}>
+						<LPCollapsableContainerHeading>
+							<h2>Source</h2>
+						</LPCollapsableContainerHeading>
+						<LPCollapsableContainerContent>
+							<CopyBlock
+								text={source}
+								language="react"
+								theme={dracula}
+								showLineNumbers
+								wrapLines />
+						</LPCollapsableContainerContent>
+					</LPCollapsableContainer>
 				</div>
-				
-				<div className="my-12">
-					<h2 className="mb-3">Source</h2>
-					<CopyBlock
-						text={source}
-						language="react"
-						theme={dracula}
-						showLineNumbers
-						wrapLines
-					/>
-				</div>
+
 			</LayoutMainColumn>
 		</LayoutContainer>
 	);
